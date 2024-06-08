@@ -1,0 +1,13 @@
+namespace XSA1.db.CDS_TBLS;
+
+/*@@layout{"layoutInfo":{"x":-174,"y":-107.5}}*/
+context USERS {
+
+    /*@@layout{"layoutInfo":{"x":-274,"y":-114.5}}*/
+    entity SALES {
+        key CUSTID : String(10) not null;
+            PRODID : String(10);
+            QTY    : Integer;
+            REV    : Integer;
+    };
+};  
