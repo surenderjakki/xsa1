@@ -1,0 +1,18 @@
+namespace XSA1.db.CDS_TBLS;
+
+
+/*@@layout{"layoutInfo":{"x":-91,"y":-153.5}}*/
+entity SALES {
+    CUSTID : String(10);
+    PRODID : String(10);
+    QTY    : Integer;
+    REV    : Integer;
+};
+
+/*@@layout{"layoutInfo":{"x":-396,"y":-208.5}}*/
+entity CUST {
+    CUSTID        : String(10);
+    NAME          : String(10);
+    CITY          : String(10);
+    association_1 : association[1, 0..1] to SALES { CUSTID };
+};
