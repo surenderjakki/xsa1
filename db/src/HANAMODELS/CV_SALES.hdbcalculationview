@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="XSA1.db.HANAMODELS::CV_SALES" applyPrivilegeType="SQL_ANALYTIC_PRIVILEGE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" runWithInvokerPrivileges="true">
+<descriptions defaultDescription="CV_SALES"/>
+<localVariables>
+  <variable id="VAR_1">
+    <descriptions defaultDescription=""/>
+    <variableProperties defaultValue="">
+      <valueDomain type="AttributeValue"/>
+      <selection type="SingleValue"/>
+    </variableProperties>
+  </variable>
+</localVariables>
+<variableMappings/>
+<dataSources/>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:TableFunctionView" id="TableFunction_1" tableFunctionName="XSA1.db.HANAMODELS::TBL_STRING">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="TableFunction_1">
+  <attributes>
+    <attribute id="CUSTID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTID"/>
+      <localVariable>VAR_1</localVariable>
+      <keyMapping columnObjectName="TableFunction_1" columnName="CUSTID"/>
+    </attribute>
+    <attribute id="PRODID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODID"/>
+      <keyMapping columnObjectName="TableFunction_1" columnName="PRODID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="QTY" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="QTY"/>
+      <measureMapping columnObjectName="TableFunction_1" columnName="QTY"/>
+    </measure>
+    <measure id="REV" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="REV"/>
+      <measureMapping columnObjectName="TableFunction_1" columnName="REV"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="TableFunction_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="94" y="210"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
