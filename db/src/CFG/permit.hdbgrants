@@ -1,0 +1,10 @@
+{
+  "XSC": {
+    "OBJECT_OWNER": {
+      "ROLE": ["XSA"]
+    },
+    "SCHEMA_OWNER": {
+      "ROLE": ["XSA"]
+    }
+  }
+}

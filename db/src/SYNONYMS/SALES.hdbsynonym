@@ -1,0 +1,9 @@
+{
+  "XSA1.db.SYNONYMS::SALES": {
+    "target": {
+      "object": "SALES",
+      "schema": "XSA",
+      "database": "HDB"
+    }
+  }
+}

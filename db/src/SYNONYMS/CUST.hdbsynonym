@@ -1,0 +1,9 @@
+{
+  "XSA1.db.SYNONYMS::SAIRPORT": {
+    "target": {
+      "object": "SAIRPORT",
+      "schema": "SFLIGHT",
+      "database": "HDB"
+    }
+  }
+}

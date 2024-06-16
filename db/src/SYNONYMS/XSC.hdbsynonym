@@ -1,0 +1,9 @@
+{
+  "XSA1.db.SYNONYMS::SCARR": {
+    "target": {
+      "object": "SCARR",
+      "schema": "SFLIGHT",
+      "database": "HDB"
+    }
+  }
+}
