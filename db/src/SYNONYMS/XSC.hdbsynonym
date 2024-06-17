@@ -12,5 +12,19 @@
       "schema": "SFLIGHT",
       "database": "HDB"
     }
+  },
+  "XSA1.db.SYNONYMS::SAPLANE": {
+    "target": {
+      "object": "SAPLANE",
+      "schema": "SFLIGHT",
+      "database": "HDB"
+    }
+  },
+  "XSA1.db.SYNONYMS::SCPLANE": {
+    "target": {
+      "object": "SCPLANE",
+      "schema": "SFLIGHT",
+      "database": "HDB"
+    }
   }
 }

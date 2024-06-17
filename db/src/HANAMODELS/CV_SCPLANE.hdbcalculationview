@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="XSA1.db.HANAMODELS::CV_SCPLANE" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" defaultClient="$$client$$" runWithInvokerPrivileges="true">
+<descriptions defaultDescription="CV_SCPLANE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="XSA1.db.SYNONYMS::SCPLANE">
+    <resourceUri>XSA1.db.SYNONYMS::SCPLANE</resourceUri>
+  </DataSource>
+  <DataSource id="XSA1.db.SYNONYMS::SAPLANE">
+    <resourceUri>XSA1.db.SYNONYMS::SAPLANE</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PLANETYPE"/>
+      <viewAttribute id="CARGOMAX"/>
+      <viewAttribute id="CAR_UNIT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="XSA1.db.SYNONYMS::SCPLANE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PLANETYPE"/>
+      <viewAttribute id="SEATSMAX"/>
+      <viewAttribute id="CONSUM"/>
+      <viewAttribute id="CON_UNIT"/>
+      <viewAttribute id="TANKCAP"/>
+      <viewAttribute id="CAP_UNIT"/>
+      <viewAttribute id="WEIGHT"/>
+      <viewAttribute id="WEI_UNIT"/>
+      <viewAttribute id="SPAN"/>
+      <viewAttribute id="SPAN_UNIT"/>
+      <viewAttribute id="LENG"/>
+      <viewAttribute id="LENG_UNIT"/>
+      <viewAttribute id="OP_SPEED"/>
+      <viewAttribute id="SPEED_UNIT"/>
+      <viewAttribute id="PRODUCER"/>
+      <viewAttribute id="SEATSMAX_B"/>
+      <viewAttribute id="SEATSMAX_F"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="XSA1.db.SYNONYMS::SAPLANE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:NonEquiJoinView" id="NonEquiJoin_1" cardinality="C1_1" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="PLANETYPE"/>
+      <viewAttribute id="CARGOMAX"/>
+      <viewAttribute id="CAR_UNIT"/>
+      <viewAttribute id="SEATSMAX"/>
+      <viewAttribute id="CONSUM"/>
+      <viewAttribute id="CON_UNIT"/>
+      <viewAttribute id="TANKCAP"/>
+      <viewAttribute id="CAP_UNIT"/>
+      <viewAttribute id="WEIGHT"/>
+      <viewAttribute id="WEI_UNIT"/>
+      <viewAttribute id="SPAN"/>
+      <viewAttribute id="SPAN_UNIT"/>
+      <viewAttribute id="LENG"/>
+      <viewAttribute id="LENG_UNIT"/>
+      <viewAttribute id="OP_SPEED"/>
+      <viewAttribute id="SPEED_UNIT"/>
+      <viewAttribute id="PRODUCER"/>
+      <viewAttribute id="SEATSMAX_B"/>
+      <viewAttribute id="SEATSMAX_F"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANETYPE" source="PLANETYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CARGOMAX" source="CARGOMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAR_UNIT" source="CAR_UNIT"/>
+    </input>
+    <input node="Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEATSMAX" source="SEATSMAX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CONSUM" source="CONSUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CON_UNIT" source="CON_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TANKCAP" source="TANKCAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAP_UNIT" source="CAP_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEIGHT" source="WEIGHT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEI_UNIT" source="WEI_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPAN" source="SPAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPAN_UNIT" source="SPAN_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LENG" source="LENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LENG_UNIT" source="LENG_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OP_SPEED" source="OP_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPEED_UNIT" source="SPEED_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCER" source="PRODUCER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEATSMAX_B" source="SEATSMAX_B"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SEATSMAX_F" source="SEATSMAX_F"/>
+    </input>
+    <joinAttribute leftColumn="PLANETYPE" rightColumn="PLANETYPE" operator="NE"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="NonEquiJoin_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="PLANETYPE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANETYPE"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="PLANETYPE"/>
+    </attribute>
+    <attribute id="CARGOMAX" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CARGOMAX"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="CARGOMAX"/>
+    </attribute>
+    <attribute id="CAR_UNIT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAR_UNIT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="CAR_UNIT"/>
+    </attribute>
+    <attribute id="SEATSMAX" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEATSMAX"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="SEATSMAX"/>
+    </attribute>
+    <attribute id="CONSUM" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CONSUM"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="CONSUM"/>
+    </attribute>
+    <attribute id="CON_UNIT" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CON_UNIT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="CON_UNIT"/>
+    </attribute>
+    <attribute id="TANKCAP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TANKCAP"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="TANKCAP"/>
+    </attribute>
+    <attribute id="CAP_UNIT" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAP_UNIT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="CAP_UNIT"/>
+    </attribute>
+    <attribute id="WEIGHT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEIGHT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="WEIGHT"/>
+    </attribute>
+    <attribute id="WEI_UNIT" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEI_UNIT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="WEI_UNIT"/>
+    </attribute>
+    <attribute id="SPAN" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPAN"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="SPAN"/>
+    </attribute>
+    <attribute id="SPAN_UNIT" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPAN_UNIT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="SPAN_UNIT"/>
+    </attribute>
+    <attribute id="LENG" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LENG"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="LENG"/>
+    </attribute>
+    <attribute id="LENG_UNIT" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LENG_UNIT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="LENG_UNIT"/>
+    </attribute>
+    <attribute id="OP_SPEED" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OP_SPEED"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="OP_SPEED"/>
+    </attribute>
+    <attribute id="SPEED_UNIT" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPEED_UNIT"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="SPEED_UNIT"/>
+    </attribute>
+    <attribute id="PRODUCER" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCER"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="PRODUCER"/>
+    </attribute>
+    <attribute id="SEATSMAX_B" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEATSMAX_B"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="SEATSMAX_B"/>
+    </attribute>
+    <attribute id="SEATSMAX_F" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEATSMAX_F"/>
+      <keyMapping columnObjectName="NonEquiJoin_1" columnName="SEATSMAX_F"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="221.11302679000914" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000001" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.00000000000006" y="356.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="NonEquiJoin_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="205" y="207"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="150.80224609375"/>
+    </shape>
+    <shape modelObjectName="Projection_2" modelObjectNameSpace="NonEquiJoin_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="158.5419921875"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>  
