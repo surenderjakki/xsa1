@@ -5,5 +5,12 @@
       "schema": "SFLIGHT",
       "database": "HDB"
     }
+  },
+  "XSA1.db.SYNONYMS::SFLIGHT": {
+    "target": {
+      "object": "SFLIGHT",
+      "schema": "SFLIGHT",
+      "database": "HDB"
+    }
   }
 }
